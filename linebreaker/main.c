@@ -3,7 +3,7 @@
 
 /*
  * author GG weebcyberpunk@gmail.com
- * version 1.0.0
+ * version 1.0.1
  * since Mar 07, 2022
  */
 
@@ -20,7 +20,7 @@ int main(int argv, char *argc[]) {
 		lw = atoi(argc[1]);
 
 	} else {
-		printf("Please specify a number of chars to break the line.\n");
+		fprintf(stderr, "Please specify a number of chars to break the line.\n");
 		return(1);
 
 	}
