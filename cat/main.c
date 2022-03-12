@@ -3,7 +3,7 @@
 
 /*
  * author GG weebcyberpunk@gmail.com
- * version 1.0.0
+ * version 1.0.1
  * since Mar 10, 2022
  */
 
@@ -35,7 +35,7 @@ int main(int argv, char *argc[]) {
 		for (int c = 1; c < argv; c++) {
 			fp = fopen(argc[c], "r");
 			if (fp == NULL) {
-				fprintf(stdout, "Cannot open file %s\n", argc[c]);
+				fprintf(stderr, "Cannot open file %s\n", argc[c]);
 
 			} else {
 				cat(fp);
