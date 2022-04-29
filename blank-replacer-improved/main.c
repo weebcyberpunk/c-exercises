@@ -7,7 +7,7 @@
 
 /*
  * author GG weebcyberpunk@gmail.com
- * version 0.0.0
+ * version 1.0.0
  * since Apr 19, 2022
  */
 
@@ -18,8 +18,8 @@
 int main() {
 
 	char c;
-	int blank = NOT_BLANK;
-	int newline = NEWLINE;
+	unsigned short blank = NOT_BLANK;
+	unsigned short newline = NEWLINE;
 
 	for (;;) {
 
