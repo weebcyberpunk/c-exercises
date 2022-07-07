@@ -10,75 +10,75 @@
  */
 
 typedef struct Node {
-	char *key;
-	char *value;
-	struct Node *next;
+    char *key;
+    char *value;
+    struct Node *next;
 } Node;
 
 typedef struct Hash {
-	Node *list[HASH_SIZE];
+    Node *list[HASH_SIZE];
 } Hash;
 
 unsigned short hash_code(char *key) {
-	unsigned long hash = MAGIC_HASH;
-	unsigned long c;
-	while ((c = *key++)) {
-		hash = ((hash << 5) + hash) + c;
-	}
+    unsigned long hash = MAGIC_HASH;
+    unsigned long c;
+    while ((c = *key++)) {
+        hash = ((hash << 5) + hash) + c;
+    }
 
-	return (hash % HASH_SIZE);
+    return (hash % HASH_SIZE);
 }
 
 Node *create_node(char *key, char *value) {
-	Node *node = (Node *) malloc(sizeof(Node));
-	node->key = key;
-	node->value = value;
-	return(node);
+    Node *node = (Node *) malloc(sizeof(Node));
+    node->key = key;
+    node->value = value;
+    return(node);
 }
 
 int insert_node(Hash *hash, char *key, char *value) {
-	unsigned short index = hash_code(key);
-	Node *node = hash->list[index];
-	if (node == NULL) {
-		hash->list[index] = create_node(key, value);
+    unsigned short index = hash_code(key);
+    Node *node = hash->list[index];
+    if (node == NULL) {
+        hash->list[index] = create_node(key, value);
 
-	} else {
+    } else {
 
-		while (node) {
-			if (node->next == NULL) {
-				node->next = create_node(key, value);
-				break;
-			}
+        while (node) {
+            if (node->next == NULL) {
+                node->next = create_node(key, value);
+                break;
+            }
 
-			node = node->next;
-		}
-	}
+            node = node->next;
+        }
+    }
 
-	return (0);
+    return (0);
 }
 
 char *search(Hash *hash, char *key) {
-	unsigned short index = hash_code(key);
-	Node *node = hash->list[index];
-	while (node) {
-		if (!strcmp(node->key, key)) {
-			return (node->value);
-		}
+    unsigned short index = hash_code(key);
+    Node *node = hash->list[index];
+    while (node) {
+        if (!strcmp(node->key, key)) {
+            return (node->value);
+        }
 
-		node = node->next;
-	}
+        node = node->next;
+    }
 
-	return "";
+    return "";
 }
 
 int main() {
 
-	Hash *hash = (Hash *) malloc(sizeof(Hash));
-	insert_node(hash, "hello", "world");
-	insert_node(hash, "gg", "weebcyberpunk");
+    Hash *hash = (Hash *) malloc(sizeof(Hash));
+    insert_node(hash, "hello", "world");
+    insert_node(hash, "gg", "weebcyberpunk");
 
-	printf("%s\n", search(hash, "hello"));
-	printf("%s\n", search(hash, "gg"));
+    printf("%s\n", search(hash, "hello"));
+    printf("%s\n", search(hash, "gg"));
 
-	return(errno);
+    return(errno);
 }

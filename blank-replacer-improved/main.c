@@ -17,37 +17,37 @@
  */
 int main() {
 
-	char c;
-	unsigned short blank = NOT_BLANK;
-	unsigned short newline = NEWLINE;
+    char c;
+    unsigned short blank = NOT_BLANK;
+    unsigned short newline = NEWLINE;
 
-	for (;;) {
+    for (;;) {
 
-		c = getchar();
-		if (c == EOF) break;
+        c = getchar();
+        if (c == EOF) break;
 
-		if ((c == ' ') || (c == '\t')) {
+        if ((c == ' ') || (c == '\t')) {
 
-			if (blank) continue;
-			blank = BLANK;
-			newline = NOT_NEWLINE;
+            if (blank) continue;
+            blank = BLANK;
+            newline = NOT_NEWLINE;
 
-		} else if (c == '\n') {
+        } else if (c == '\n') {
 
-			if (newline) continue;
-			newline = NEWLINE;
-			blank = NOT_BLANK;
+            if (newline) continue;
+            newline = NEWLINE;
+            blank = NOT_BLANK;
 
-		} else {
+        } else {
 
-			newline = NOT_NEWLINE;
-			blank = NOT_BLANK;
-		}
+            newline = NOT_NEWLINE;
+            blank = NOT_BLANK;
+        }
 
-		printf("%c", c);
-	}
+        printf("%c", c);
+    }
 
-	printf("\n");
+    printf("\n");
 
-	return(0);
+    return(0);
 }

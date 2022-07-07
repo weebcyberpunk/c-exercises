@@ -12,33 +12,33 @@
  */
 int main(int argv, char *argc[]) {
 
-	char c;
-	int x = 0;
-	int lw;
+    char c;
+    int x = 0;
+    int lw;
 
-	if (argv > 1) {
-		lw = atoi(argc[1]);
+    if (argv > 1) {
+        lw = atoi(argc[1]);
 
-	} else {
-		fprintf(stderr, "Please specify a number of chars to break the line.\n");
-		return(1);
+    } else {
+        fprintf(stderr, "Please specify a number of chars to break the line.\n");
+        return(1);
 
-	}
-	
-	for (;;) {
-		c = getchar();
-		if (c == EOF) break;
-		if (c == '\n') continue;
-		printf("%c", c);
-		x++;
-		if (x == lw) {
-			printf("\n");
-			x = 0;
+    }
+    
+    for (;;) {
+        c = getchar();
+        if (c == EOF) break;
+        if (c == '\n') continue;
+        printf("%c", c);
+        x++;
+        if (x == lw) {
+            printf("\n");
+            x = 0;
 
-		}
-	}
-	
-	printf("\n");
-	
-	return(0);
+        }
+    }
+    
+    printf("\n");
+    
+    return(0);
 }

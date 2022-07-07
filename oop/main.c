@@ -10,35 +10,35 @@
  */
 
 typedef Class Person {
-	char name[10];
-	short age;
-	short height;
-	int(*show)(Class Person *);
+    char name[10];
+    short age;
+    short height;
+    int(*show)(Class Person *);
 } Person;
 
 int person_print(Person *self) {
 
-	printf("name: %s, age: %d, height: %d\n", self->name, self->age, self->height);
+    printf("name: %s, age: %d, height: %d\n", self->name, self->age, self->height);
 
-	return (errno);
+    return (errno);
 }
 
 Person *new_person(char name[], 
-		short age, 
-		short height) {
+        short age, 
+        short height) {
 
-	Person *self = (Person *) malloc(sizeof(Person));
-	strcpy(self->name, name);
-	self->age = age;
-	self->height = height;
-	self->show = &person_print;
+    Person *self = (Person *) malloc(sizeof(Person));
+    strcpy(self->name, name);
+    self->age = age;
+    self->height = height;
+    self->show = &person_print;
 
-	return(self);
+    return(self);
 }
 
 int main() {
 
-	Person *person = (Person *) new_person("GG", 17, 173);
+    Person *person = (Person *) new_person("GG", 17, 173);
 
-	return(errno);
+    return(errno);
 }

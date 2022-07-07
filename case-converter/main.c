@@ -15,44 +15,44 @@
  */
 int main(int argv, char *argc[]) {
 
-	char c;
+    char c;
 
-	if (argv == 1) {
-		printf("Usage:\n");
-		printf("-lu 	to convert lower to upper\n");
-		printf("-ul 	to convert upper to lower\n");
-		printf("-r 	to revert case\n");
-		return(1);
-	}
-	
-	if (strcmp(argc[1], "-lu") == 0) {
-		for (;;) {
-			c = getchar();
-			if (islower(c)) c = toupper(c);
-			if (c == EOF) break;
-			printf("%c", c);
+    if (argv == 1) {
+        printf("Usage:\n");
+        printf("-lu     to convert lower to upper\n");
+        printf("-ul     to convert upper to lower\n");
+        printf("-r     to revert case\n");
+        return(1);
+    }
+    
+    if (strcmp(argc[1], "-lu") == 0) {
+        for (;;) {
+            c = getchar();
+            if (islower(c)) c = toupper(c);
+            if (c == EOF) break;
+            printf("%c", c);
 
-		}
+        }
 
-	} else if (strcmp(argc[1], "-ul") == 0) {
-		for (;;) {
-			c = getchar();
-			if (isupper(c)) c = tolower(c);
-			if (c == EOF) break;
-			printf("%c", c);
+    } else if (strcmp(argc[1], "-ul") == 0) {
+        for (;;) {
+            c = getchar();
+            if (isupper(c)) c = tolower(c);
+            if (c == EOF) break;
+            printf("%c", c);
 
-		}
-	
-	} else if (strcmp(argc[1], "-r") == 0) {
-		for (;;) {
-			c = getchar();
-			if (isupper(c)) c = tolower(c);
-			else if (islower(c)) c = toupper(c);
-			if (c == EOF) break;
-			printf("%c", c);
+        }
+    
+    } else if (strcmp(argc[1], "-r") == 0) {
+        for (;;) {
+            c = getchar();
+            if (isupper(c)) c = tolower(c);
+            else if (islower(c)) c = toupper(c);
+            if (c == EOF) break;
+            printf("%c", c);
 
-		}
-	}
+        }
+    }
 
-	return(0);
+    return(0);
 }

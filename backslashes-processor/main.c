@@ -15,20 +15,21 @@
  */
 int main() {
 
-	char c;
-	for (;;) {
-		c = getchar();
-		if (c == EOF) break;
-		else if (c == '\t') printf("\\t");
-		else if (c == '\b') printf("\\b");
-		else if (c == '\0') printf("\\0");
-		else if (c == '\n') printf("\\n");
-		else if (c == '\\') printf("\\");
-		else printf("%c", c);
+    char c;
+    for (;;) {
+        c = getchar();
+        if (c == EOF) break;
+        else if (c == '\t') printf("\\t");
+        else if (c == '\b') printf("\\b");
+        else if (c == '\0') printf("\\0");
+        else if (c == '\n') printf("\\n");
+        else if (c == '\\') printf("\\");
+        else printf("%c", c);
 
-	}
+    }
 
-	printf("\n");
-	
-	return(0);
+    printf("\n");
+    
+    return(0);
 }
+

@@ -14,33 +14,33 @@
  */
 int main(int argv, char *argc[]) {
 
-	char c;
-	int spaces;
+    char c;
+    int spaces;
 
-	// get spaces
-	if (argv > 1) {
-		spaces = atoi(argc[1]);
+    // get spaces
+    if (argv > 1) {
+        spaces = atoi(argc[1]);
 
-	} else {
-		fprintf(stderr, "Please specify tab size.\n");
-		return(1);
+    } else {
+        fprintf(stderr, "Please specify tab size.\n");
+        return(1);
 
-	}
+    }
 
-	// main loop
-	for (;;) {
-		c = getchar();
-		if (c == EOF) break;
+    // main loop
+    for (;;) {
+        c = getchar();
+        if (c == EOF) break;
 
-		if (c == '\t')
-			for (int count = 0; count < spaces; count++) 
-				printf(" ");
+        if (c == '\t')
+            for (int count = 0; count < spaces; count++) 
+                printf(" ");
 
-		else printf("%c", c);
+        else printf("%c", c);
 
-	}
+    }
 
-	printf("\n");
-	
-	return(0);
+    printf("\n");
+    
+    return(0);
 }

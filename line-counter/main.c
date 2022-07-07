@@ -13,25 +13,25 @@
  */
 int main() {
 
-	int count = 1;
-	int print = 1;
-	char c;
+    int count = 1;
+    int print = 1;
+    char c;
 
-	for (;;) {
-		c = getchar();
+    for (;;) {
+        c = getchar();
 
-		if (c == EOF) break;
+        if (c == EOF) break;
 
-		if (print == 1) {
-			printf("%i - ", count);
-			print = 0;
-			count++;
-		}
+        if (print == 1) {
+            printf("%i - ", count);
+            print = 0;
+            count++;
+        }
 
-		if (c == '\n') print = 1;
-		printf("%c", c);
+        if (c == '\n') print = 1;
+        printf("%c", c);
 
-	}
+    }
 
-	return(0);
+    return(0);
 }

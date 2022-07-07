@@ -13,38 +13,38 @@
  * no args, concatenates from stdin
  */
 int cat(FILE *fp) {
-	char c;
-	for (;;) {
-		c = fgetc(fp);
-		if (c == EOF) break;
-		printf("%c", c);
+    char c;
+    for (;;) {
+        c = fgetc(fp);
+        if (c == EOF) break;
+        printf("%c", c);
 
-	}
+    }
 
-	return(0);
+    return(0);
 }
 
 int main(int argv, char *argc[]) {
 
-	FILE *fp;
-	if (argv == 1) {
-		cat(stdin);
+    FILE *fp;
+    if (argv == 1) {
+        cat(stdin);
 
-	} else {
+    } else {
 
-		for (int c = 1; c < argv; c++) {
-			fp = fopen(argc[c], "r");
-			if (fp == NULL) {
-				fprintf(stderr, "Cannot open file %s\n", argc[c]);
+        for (int c = 1; c < argv; c++) {
+            fp = fopen(argc[c], "r");
+            if (fp == NULL) {
+                fprintf(stderr, "Cannot open file %s\n", argc[c]);
 
-			} else {
-				cat(fp);
+            } else {
+                cat(fp);
 
-			}
-		}
-	}
+            }
+        }
+    }
 
-	printf("\n");
-	
-	return(0);
+    printf("\n");
+    
+    return(0);
 }

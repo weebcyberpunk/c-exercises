@@ -16,31 +16,31 @@
  */
 int main() {
 
-	char c;
-	int last_c = NOT_BLANK;
+    char c;
+    int last_c = NOT_BLANK;
 
-	for (;;) {
-		c = getchar();
+    for (;;) {
+        c = getchar();
 
-		if (c == EOF) break;
+        if (c == EOF) break;
 
-		if ((c == ' ') || (c == '\t')) {
+        if ((c == ' ') || (c == '\t')) {
 
-			if (last_c == NOT_BLANK) {
+            if (last_c == NOT_BLANK) {
 
-				printf("%c", c);
-				last_c = BLANK;
+                printf("%c", c);
+                last_c = BLANK;
 
-			} else {
-				continue;
+            } else {
+                continue;
 
-			}
-		} else {
-			if (last_c == BLANK) last_c = NOT_BLANK;
-			printf("%c", c);
+            }
+        } else {
+            if (last_c == BLANK) last_c = NOT_BLANK;
+            printf("%c", c);
 
-		}
-	}
-	
-	return(0);
+        }
+    }
+    
+    return(0);
 }
